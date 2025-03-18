@@ -41,7 +41,7 @@ jobs:
             git config --global user.email "203381214+D07N37@users.noreply.github.com"
             git config --global user.name "D07N37"
             git add dist/multistage.min.js
-            git status --porcelain
+            git restore package-lock.json
             if [ -n "$(git status --porcelain)" ]; then
               git commit -m 'Add generated multistage.min.js file'
               git push

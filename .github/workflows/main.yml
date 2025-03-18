@@ -41,7 +41,10 @@ jobs:
             git config --global user.email "203381214+D07N37@users.noreply.github.com"
             git config --global user.name "D07N37"
             git add dist/multistage.min.js
-            git commit -m 'Add generated multistage.min.js file'
-            git push
+            if [ -n "$(git status --porcelain)" ]; then
+              git commit -m 'Add generated multistage.min.js file'
+              git push
+            else
+              echo "No changes to commit"
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

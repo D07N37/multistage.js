@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS='--experimental-vm-modules' jest",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "jest": {
+    "collectCoverage": true
+  }
+}

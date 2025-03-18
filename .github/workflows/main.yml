@@ -1,0 +1,47 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+          
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run Jest unit tests
+        run: npm test
+
+      - name: Run Webpack
+        run: npx webpack --config webpack.config.cjs
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: multistage.min.js
+          path: ./dist/multistage.min.js
+
+      - name: Commit and push changes
+        run: |
+            git config --global user.email "203381214+D07N37@users.noreply.github.com"
+            git config --global user.name "D07N37"
+            git add dist/multistage.min.js
+            git commit -m 'Add generated multistage.min.js file'
+            git push
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

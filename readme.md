@@ -18,7 +18,7 @@ The multi-stage forms need to be initialized before they can be used and display
 The class constructor requires at least one parameter which can either be an element, or a selector. If the parameter is a selector, the library will use the `document.querySelector()` method to obtain the element. This parameter refers to the container which will contain all of the stages within the form. The container can be a `<form>` element.
 ```
 // new Multistage(element)
-let instance = new Multistage(document.querySelector("#helloworld"));
+let instance = new Multistage(document.getElementById("helloworld"));
 
 // new Multistage(selector)
 let instance = new Multistage("#helloworld");

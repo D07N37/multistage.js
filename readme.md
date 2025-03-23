@@ -1,4 +1,4 @@
-# multistage.js ![workflow badge](https://github.com/D07N37/multistage.js/actions/workflows/main.yml/badge.svg)
+# multistage.js ![workflow badge](https://github.com/D07N37/multistage.js/actions/workflows/main.yml/badge.svg) ![file size badge](https://img.shields.io/github/size/d07n37/multistage.js/dist/multistage.min.js)
 
 Multistage.js is a highly customizable *<4kb* javascript library to build multi-stage HTML forms. This library does not introduce any classes or unneccesary styles and has **no dependencies**.
 
